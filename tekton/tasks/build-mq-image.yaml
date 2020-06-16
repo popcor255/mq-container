@@ -13,12 +13,14 @@ spec:
   steps:
     - name: build-sources
       image: docker
-      workingDir: /workplace/source
+      workingDir: /workspace/source
       command: [ /bin/sh ]
       args: 
         - -c
         - |
           set -eu
+          apk add make
+          apk add curl
           make
       securityContext:
         privileged: true
