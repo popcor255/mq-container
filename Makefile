@@ -161,11 +161,7 @@ incubating: build-explorer
 downloads/$(MQ_ARCHIVE_DEV):
 	$(info $(SPACER)$(shell printf $(TITLE)"Downloading IBM MQ Advanced for Developers "$(MQ_VERSION)$(END)))
 	mkdir -p downloads
-ifneq "$(MQ_ARCHIVE_REPOSITORY_DEV)" "$(EMPTY)"
-	curl -u $(MQ_ARCHIVE_REPOSITORY_USER):$(MQ_ARCHIVE_REPOSITORY_CREDENTIAL) -X GET "$(MQ_ARCHIVE_REPOSITORY_DEV)" -o downloads/$(MQ_ARCHIVE_DEV)
-else
 	curl -L https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/$(MQ_ARCHIVE_DEV) -o downloads/$(MQ_ARCHIVE_DEV)
-endif
 
 downloads/$(MQ_ARCHIVE):
 	$(info $(SPACER)$(shell printf $(TITLE)"Downloading IBM MQ Advanced "$(MQ_VERSION)$(END)))

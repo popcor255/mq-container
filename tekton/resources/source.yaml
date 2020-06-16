@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: source
+spec:
+  type: git
+  params:
+    - name: url
+      value: https://github.com/popcor255/mq-container
+    - name: revision
+      value: tekton-mq
