@@ -29,7 +29,7 @@ test -f /usr/bin/apt-get && UBUNTU=true || UBUNTU=false
 DIR_EXTRACT=/tmp/mq
 mkdir -p ${DIR_EXTRACT}
 cd ${DIR_EXTRACT}
-curl -LO $MQ_URL
+curl -LO https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev914_linux_x86-64.tar.gz
 tar -zxf ./*.tar.gz
 
 # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images

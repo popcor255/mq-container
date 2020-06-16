@@ -11,16 +11,16 @@ spec:
     #     - name: mq-image
     #       type: image
   steps:
-    - name: build-sources
-      image: docker
+    - name: build-source
+      image: codercom/ubuntu-docker
       workingDir: /workspace/source
       command: [ /bin/sh ]
       args: 
         - -c
         - |
           set -eu
-          apk add make
-          apk add curl
+          apt-get install -y make
+          apt-get install -y curl
           make
       securityContext:
         privileged: true
